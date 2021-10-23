@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./my-app
+    container_name: frontend
+    command: npm run start
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./my-app/src:/usr/src/frontend/src
